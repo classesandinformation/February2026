@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>February 2026 Current Affairs — 100 MCQ Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080810;color:#e8e8f0;font-family:'DM Sans',sans-serif;min-height:100vh}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0b0b18,#180a2e 50%,#0a1220);padding:48px 20px 34px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 28% 60%,rgba(124,111,255,.2),transparent 55%),radial-gradient(ellipse at 72% 28%,rgba(255,107,138,.12),transparent 55%);pointer-events:none}
+.hero-badge{display:inline-block;background:rgba(124,111,255,.18);border:1px solid rgba(124,111,255,.45);color:#b0a0ff;padding:5px 18px;border-radius:50px;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;position:relative}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.1;position:relative;background:linear-gradient(135deg,#fff 20%,#b0a0ff 60%,#ff6b8a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:#7878a0;font-size:14px;margin-top:10px;position:relative}
+.stats-row{display:flex;justify-content:center;gap:10px;margin-top:20px;flex-wrap:wrap;position:relative}
+.stat-chip{background:rgba(255,255,255,.05);border:1px solid #252535;border-radius:50px;padding:6px 16px;font-size:12px;color:#7878a0}
+.stat-chip span{color:#7c6fff;font-weight:700}
+
+/* TOPBAR */
+.topbar{background:#101018;border-bottom:1px solid #252535;padding:10px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;flex-wrap:wrap}
+.timer{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#06d6a0;min-width:62px;letter-spacing:1px;transition:color .3s}
+.timer.warn{color:#f8961e}
+.timer.danger{color:#ef476f;animation:blink .7s infinite alternate}
+@keyframes blink{from{opacity:1}to{opacity:.35}}
+.prog-bg{flex:1;min-width:80px;height:6px;background:#252535;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,#7c6fff,#ff6b8a);border-radius:3px;transition:width .4s}
+.prog-txt{font-size:12px;color:#7878a0;white-space:nowrap}
+.score-chip{background:rgba(6,214,160,.12);border:1px solid rgba(6,214,160,.3);color:#06d6a0;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap}
+
+/* CONTAINER */
+.wrap{max-width:860px;margin:0 auto;padding:24px 14px 70px}
+
+/* FILTER */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.fbtn{background:#16161f;border:1px solid #252535;color:#7878a0;padding:5px 14px;border-radius:50px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.fbtn:hover,.fbtn.on{background:rgba(124,111,255,.14);border-color:#7c6fff;color:#b0a0ff}
+
+/* CARD */
+.card{background:#16161f;border:1.5px solid #252535;border-radius:14px;margin-bottom:18px;overflow:hidden;transition:border-color .3s;display:block}
+.card.done{border-color:rgba(124,111,255,.38)}
+.card.odisha{border-left:3px solid rgba(251,191,36,.55)}
+.card.hidden{display:none}
+.qhead{padding:16px 18px 12px;display:flex;gap:12px;align-items:flex-start}
+.qnum{min-width:34px;height:34px;background:rgba(124,111,255,.14);border:1px solid rgba(124,111,255,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;color:#7c6fff;flex-shrink:0}
+.qcat{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#7878a0;margin-bottom:5px;font-weight:600}
+.qtxt{font-size:14.5px;line-height:1.55;font-weight:500}
+
+/* OPTIONS 2x2 */
+.opts{padding:0 18px 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{background:#101018;border:1.5px solid #252535;border-radius:10px;padding:10px 12px;text-align:left;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;color:#e8e8f0;display:flex;align-items:flex-start;gap:9px;transition:all .2s;line-height:1.4;width:100%}
+.opt:hover:not(:disabled){background:rgba(124,111,255,.1);border-color:rgba(124,111,255,.5);transform:translateY(-2px);box-shadow:0 4px 12px rgba(124,111,255,.12)}
+.opt:disabled{cursor:default}
+.opt-lbl{min-width:22px;height:22px;border-radius:5px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#7878a0;flex-shrink:0;margin-top:1px}
+.opt.correct{background:rgba(6,214,160,.1)!important;border-color:#06d6a0!important;color:#fff!important}
+.opt.correct .opt-lbl{background:#06d6a0;color:#000}
+.opt.wrong{background:rgba(239,71,111,.1)!important;border-color:#ef476f!important;color:#fff!important}
+.opt.wrong .opt-lbl{background:#ef476f;color:#fff}
+.opt.dim{opacity:.32}
+
+/* EXPLANATION */
+.expl{margin:0 18px 16px;background:linear-gradient(135deg,rgba(124,111,255,.09),rgba(255,107,138,.05));border:1px solid rgba(124,111,255,.22);border-radius:10px;padding:13px 15px;display:none;animation:fadeup .35s ease}
+.expl.show{display:block}
+@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.expl-lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#7c6fff;font-weight:700;margin-bottom:6px}
+.expl-txt{font-size:13px;line-height:1.65;color:#c0c0dc}
+
+/* RESULT */
+.result{display:none;text-align:center;padding:50px 20px;background:#16161f;border:1px solid #252535;border-radius:14px;margin-top:20px}
+.result.show{display:block}
+.res-score{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;background:linear-gradient(135deg,#ffd166,#ff6b8a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.res-msg{font-size:14px;color:#7878a0;margin-top:10px}
+.res-stats{display:flex;justify-content:center;gap:30px;margin-top:26px;flex-wrap:wrap}
+.rs{text-align:center}
+.rs-n{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800}
+.rs-l{font-size:11px;color:#7878a0;text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+
+/* OVERLAY */
+.overlay{display:none;position:fixed;inset:0;background:rgba(8,8,16,.93);z-index:500;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px}
+.overlay.show{display:flex}
+.ov-icon{font-size:4rem;margin-bottom:14px}
+.ov-title{font-family:'Syne',sans-serif;font-size:2.3rem;font-weight:800;background:linear-gradient(135deg,#ffd166,#ff6b8a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ov-score{font-family:'Syne',sans-serif;font-size:3.8rem;font-weight:800;color:#ffd166;margin:18px 0 6px}
+.ov-msg{color:#7878a0;font-size:14px}
+.ov-btns{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+
+/* BUTTONS */
+.btn-main{background:linear-gradient(135deg,#7c6fff,#9a6aff);color:#fff;border:none;padding:13px 38px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(124,111,255,.35);transition:transform .2s}
+.btn-main:hover{transform:translateY(-2px)}
+.btn-sec{background:transparent;color:#7878a0;border:1px solid #252535;padding:13px 28px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;transition:all .2s}
+.btn-sec:hover{border-color:#7c6fff;color:#b0a0ff}
+
+.back-top{position:fixed;bottom:26px;right:20px;background:#7c6fff;color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 4px 14px rgba(124,111,255,.4);z-index:200;display:none;align-items:center;justify-content:center}
+.back-top.vis{display:flex}
+
+@media(max-width:480px){.opts{grid-template-columns:1fr}.topbar{gap:8px}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📅 February 2026 Current Affairs</div>
+  <h1>100 Question Quiz</h1>
+  <p class="hero-sub">National + Odisha Special · 60 Min Timer · 2×2 Option Grid · With Explanations</p>
+  <div class="stats-row">
+    <div class="stat-chip"><span>100</span> Questions</div>
+    <div class="stat-chip">⏱️ <span>60</span> Min</div>
+    <div class="stat-chip"><span>9</span> Categories</div>
+    <div class="stat-chip">🏛️ Odisha Special</div>
+  </div>
+</div>
+
+<!-- STICKY TOP BAR -->
+<div class="topbar">
+  <span>⏱️</span>
+  <div class="timer" id="timer">60:00</div>
+  <div class="prog-bg"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  <div class="prog-txt" id="progTxt">0 / 100</div>
+  <div class="score-chip" id="scoreChip">Score: 0</div>
+</div>
+
+<!-- MAIN -->
+<div class="wrap">
+  <div class="filters" id="filters"></div>
+  <div id="quiz"></div>
+  <div class="result" id="result">
+    <div class="res-score" id="resScore">0/100</div>
+    <div class="res-msg" id="resMsg"></div>
+    <div class="res-stats">
+      <div class="rs"><div class="rs-n" style="color:#06d6a0" id="rsC">0</div><div class="rs-l">✅ Correct</div></div>
+      <div class="rs"><div class="rs-n" style="color:#ef476f" id="rsW">0</div><div class="rs-l">❌ Wrong</div></div>
+      <div class="rs"><div class="rs-n" style="color:#7c6fff" id="rsS">0</div><div class="rs-l">⏭️ Skipped</div></div>
+    </div>
+    <div style="margin-top:28px"><button class="btn-main" onclick="restart()">🔄 Restart Quiz</button></div>
+  </div>
+</div>
+
+<!-- TIME UP OVERLAY -->
+<div class="overlay" id="overlay">
+  <div class="ov-icon">⏰</div>
+  <div class="ov-title">Time's Up!</div>
+  <div class="ov-score" id="ovScore">0/100</div>
+  <div class="ov-msg" id="ovMsg"></div>
+  <div class="ov-btns">
+    <button class="btn-main" onclick="restart()">🔄 Restart</button>
+    <button class="btn-sec" onclick="document.getElementById('overlay').classList.remove('show')">📋 Review Answers</button>
+  </div>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const QS=[
+  {id:1,cat:"🌍 International",q:"On which date did Pakistan declare 'open war' against the Taliban in Afghanistan?",opts:["February 20","February 26","February 15","February 28"],ans:1,exp:"Pakistan launched airstrikes against Afghanistan and declared 'open war' against the Taliban on February 26, 2026, marking a major escalation in Pakistan-Afghanistan border tensions."},
+  {id:2,cat:"🌍 International",q:"Who was killed in the joint US-Israel strikes on Iran on February 28, 2026?",opts:["President Raisi","Supreme Leader Khamenei","General Soleimani","FM Araghchi"],ans:1,exp:"The US-Israel coordinated strikes on February 28 killed Supreme Leader Ali Khamenei along with several top Iranian officials, triggering a massive regional crisis."},
+  {id:3,cat:"🌍 International",q:"What was the immediate consequence of Iran's retaliation against US-Israel strikes?",opts:["Strait of Malacca closed","Strait of Hormuz closed","Suez Canal blocked","Gulf ports seized"],ans:1,exp:"Iran's retaliatory drone and missile attacks led to closure of the Strait of Hormuz — through which a huge share of global oil passes — causing severe worldwide economic disruption."},
+  {id:4,cat:"🌍 International",q:"Which nuclear arms control treaty expired on February 5, 2026?",opts:["INF Treaty","SALT II","New START Treaty","Open Skies Treaty"],ans:2,exp:"The New START (Strategic Arms Reduction Treaty) between the US and Russia expired on February 5, 2026 with no replacement, raising fears of a new nuclear arms race."},
+  {id:5,cat:"🌍 International",q:"Where was the AI Impact Summit held in February 2026?",opts:["Mumbai","Bengaluru","New Delhi","Hyderabad"],ans:2,exp:"The AI Impact Summit was held in New Delhi from February 16–21, 2026, bringing together global leaders to discuss AI governance and its societal impact."},
+  {id:6,cat:"🌍 International",q:"Who was named interim WEF President after Børge Brende resigned on Feb 26?",opts:["Klaus Schwab","Kristalina Georgieva","Alois Zwinggi","Ajay Banga"],ans:2,exp:"Alois Zwinggi, a long-serving WEF executive, was appointed interim President & CEO of the World Economic Forum following Børge Brende's resignation on February 26, 2026."},
+  {id:7,cat:"🌍 International",q:"New START Treaty governed strategic nuclear weapons between which nations?",opts:["USA & China","USA & Russia","Russia & NATO","China & Russia"],ans:1,exp:"New START was a bilateral US-Russia treaty limiting deployed strategic nuclear warheads and delivery systems to maintain global nuclear stability."},
+  {id:8,cat:"🌍 International",q:"The 2026 Winter Olympics closing ceremony was held on which date?",opts:["February 20","February 22","February 24","February 26"],ans:1,exp:"The Milan-Cortina 2026 Winter Olympics closed on February 22, wrapping up 17 days of competition across alpine, nordic, and ice sport disciplines."},
+  {id:9,cat:"🌍 International",q:"Which country hosted the 2026 Winter Olympics?",opts:["France","Austria","Italy","Switzerland"],ans:2,exp:"Italy hosted the 2026 Winter Olympics across Milan (indoor/skating) and Cortina d'Ampezzo (alpine skiing) — Italy's first Winter Olympics since Turin 2006."},
+  {id:10,cat:"🌍 International",q:"Which country did Pakistan conduct airstrikes against in February 2026?",opts:["India","Iran","Afghanistan","Tajikistan"],ans:2,exp:"Pakistan launched airstrikes inside Afghanistan targeting Taliban positions in February 2026, escalating long-standing tensions over cross-border terrorism."},
+  {id:11,cat:"🗳️ Elections",q:"Who won Japan's February 2026 general election?",opts:["Fumio Kishida","Shigeru Ishiba","Sanae Takaichi","Taro Kono"],ans:2,exp:"Incumbent PM Sanae Takaichi won a landslide in Japan's general election, securing a supermajority in the House of Representatives."},
+  {id:12,cat:"🗳️ Elections",q:"Which party won most seats in Thailand's February 2026 general election?",opts:["Pheu Thai Party","Move Forward","Bhumjaithai Party","Democrat Party"],ans:2,exp:"Thailand's conservative Bhumjaithai Party won the most seats. Voters also approved a process to replace the military-influenced constitution."},
+  {id:13,cat:"🗳️ Elections",q:"Bangladesh's February 2026 election was its first since ouster of which PM?",opts:["Khaleda Zia","Sheikh Hasina","Muhammad Yunus","Tarique Rahman"],ans:1,exp:"Bangladesh held its first election since mass protests removed PM Sheikh Hasina in 2024 after over 15 years of rule."},
+  {id:14,cat:"🗳️ Elections",q:"Which party won a supermajority in Bangladesh's February 2026 election?",opts:["Awami League","Jatiya Party","BNP","Jamaat-e-Islami"],ans:2,exp:"BNP (Bangladesh Nationalist Party) led by Tarique Rahman won a supermajority. The July Charter referendum also passed, signaling major constitutional change."},
+  {id:15,cat:"🗳️ Elections",q:"Who was elected President of Portugal in February 2026?",opts:["André Ventura","Marcelo Rebelo de Sousa","António José Seguro","Pedro Nuno Santos"],ans:2,exp:"António José Seguro of the Socialist Party won Portugal's presidential election in the second round, defeating CHEGA's far-right leader André Ventura."},
+  {id:16,cat:"🗳️ Elections",q:"Who was sworn in as PM of the Netherlands on February 23, 2026?",opts:["Mark Rutte","Geert Wilders","Dick Schoof","Rob Jetten"],ans:3,exp:"Rob Jetten was sworn in as PM of the Netherlands on February 23, heading a minority government after coalition negotiations."},
+  {id:17,cat:"🗳️ Elections",q:"André Ventura leads which Portuguese political party?",opts:["Socialist Party","Social Democrats","CHEGA","Communist Party"],ans:2,exp:"André Ventura leads CHEGA, Portugal's far-right populist party. He lost to António José Seguro in the presidential election's second round."},
+  {id:18,cat:"🗳️ Elections",q:"BNP leader Tarique Rahman had been living in exile in which city?",opts:["New Delhi","New York","London","Berlin"],ans:2,exp:"Tarique Rahman had been living in exile in London for years before Bangladesh's political transition following Sheikh Hasina's removal in 2024."},
+  {id:19,cat:"🗳️ Elections",q:"What type of government did Rob Jetten head in the Netherlands?",opts:["Coalition majority","Grand coalition","Minority government","Caretaker government"],ans:2,exp:"Rob Jetten led a minority government, meaning his coalition lacked a parliamentary majority but could govern by seeking case-by-case support from other parties."},
+  {id:20,cat:"🗳️ Elections",q:"Japan's Sanae Takaichi secured what type of majority?",opts:["Simple majority","Two-thirds supermajority","Slim majority","Hung parliament"],ans:1,exp:"Takaichi's coalition won a supermajority (two-thirds+ seats) in Japan's House of Representatives, giving her the power to initiate constitutional amendments."},
+  {id:21,cat:"🏅 Sports",q:"Where were the 2026 Winter Olympics held?",opts:["Paris & Lyon, France","Tokyo & Osaka","Milan & Cortina d'Ampezzo","Stockholm & Oslo"],ans:2,exp:"The 2026 Winter Olympics were held in Milan (indoor/skating events) and Cortina d'Ampezzo (alpine skiing) in Italy."},
+  {id:22,cat:"🏅 Sports",q:"Which new sport debuted at the 2026 Winter Olympics?",opts:["Speed climbing","Ski mountaineering","Biathlon sprint","Freestyle moguls"],ans:1,exp:"Ski mountaineering ('Skimo') made its Olympic debut at Milan-Cortina 2026, combining uphill and downhill skiing on challenging mountain terrain."},
+  {id:23,cat:"🏅 Sports",q:"How many Grammys did Kendrick Lamar win at the 2026 ceremony?",opts:["Three","Four","Five","Six"],ans:2,exp:"Kendrick Lamar won five Grammy Awards at the 2026 ceremony, becoming the most awarded hip-hop artist in Grammy history, surpassing Jay-Z."},
+  {id:24,cat:"🏅 Sports",q:"Whose album became first Spanish-language Album of the Year at 2026 Grammys?",opts:["Maluma","J Balvin","Bad Bunny","Shakira"],ans:2,exp:"Bad Bunny's album made history as the first Spanish-language album ever to win Grammy Album of the Year at the 2026 Recording Academy Awards."},
+  {id:25,cat:"🏅 Sports",q:"What dates did the 2026 Winter Olympics run?",opts:["Jan 28–Feb 13","Feb 6–22","Feb 10–26","Jan 15–Feb 1"],ans:1,exp:"The 2026 Winter Olympics ran February 6–22, 2026, across Milan's urban venues and Cortina d'Ampezzo's alpine venues."},
+  {id:26,cat:"🏅 Sports",q:"Which record did Kendrick Lamar break at the 2026 Grammys?",opts:["Most nominations ever","Most wins for rap album","Most awarded hip-hop artist ever","First rapper to win Record of Year twice"],ans:2,exp:"With five 2026 wins, Kendrick Lamar surpassed Jay-Z's total Grammy count to become the most awarded hip-hop artist in Grammy history."},
+  {id:27,cat:"🏅 Sports",q:"'Skimo' is the popular nickname for which 2026 Olympic debut sport?",opts:["Ski mountaineering","Ski touring","Alpine racing","Nordic combined"],ans:0,exp:"'Skimo' is ski mountaineering — a competitive sport combining ascent and descent of mountain slopes on skis, demanding extraordinary endurance and skill."},
+  {id:28,cat:"🏅 Sports",q:"Artemis II was the first crewed Moon mission since which Apollo mission?",opts:["Apollo 11","Apollo 13","Apollo 17","Apollo 16"],ans:2,exp:"Artemis II was the first crewed mission to the Moon since Apollo 17 in December 1972 — over 50 years later — marking humanity's historic return to deep space."},
+  {id:29,cat:"🏅 Sports",q:"In what language was the Grammy 2026 Album of the Year recorded?",opts:["Portuguese","French","Spanish","English"],ans:2,exp:"Bad Bunny's Grammy-winning album was recorded entirely in Spanish — the first non-English language album to win the Recording Academy's most prestigious prize."},
+  {id:30,cat:"🏅 Sports",q:"Which Italian city hosted indoor/skating events of the 2026 Winter Olympics?",opts:["Rome","Florence","Turin","Milan"],ans:3,exp:"Milan hosted indoor and skating events (ice hockey, figure skating, speed skating) while Cortina d'Ampezzo handled alpine skiing events."},
+  {id:31,cat:"🚀 Space",q:"Artemis II was the first crewed Moon mission since which year?",opts:["1969","1972","1975","1968"],ans:1,exp:"Artemis II marked humanity's return to the Moon over 50 years after Apollo 17 in 1972 — the last crewed lunar mission until Artemis resumed human lunar exploration."},
+  {id:32,cat:"🚀 Space",q:"NASA targeted which month for the Artemis II launch in 2026?",opts:["January","February","March","April"],ans:1,exp:"NASA targeted February 2026 as the earliest launch window for Artemis II, the first crewed mission to take astronauts to the vicinity of the Moon."},
+  {id:33,cat:"🚀 Space",q:"Artemis is named after the twin sister of which Greek god?",opts:["Zeus","Hermes","Apollo","Poseidon"],ans:2,exp:"NASA's Artemis program is named after Greek goddess Artemis, twin sister of Apollo — a nod to the original Apollo moon program that first landed humans on the Moon in 1969."},
+  {id:34,cat:"🚀 Space",q:"Which space agency launched the Artemis II mission?",opts:["ESA","ISRO","SpaceX","NASA"],ans:3,exp:"NASA launched Artemis II, with international partners including ESA (Europe), CSA (Canada), and JAXA (Japan) as part of the broader Artemis lunar program."},
+  {id:35,cat:"🚀 Space",q:"Artemis II's primary objective was?",opts:["First Moon landing since 1972","First crewed flyby of Moon since 1972","First all-female Moon crew","First private lunar mission"],ans:1,exp:"Artemis II's objective was a crewed flyby of the Moon — not a landing — making it the first time humans traveled to lunar orbit since Apollo 17 in December 1972."},
+  {id:36,cat:"🇮🇳 India",q:"SUJVIKA is which type of portal launched alongside Budget 2026–27?",opts:["Solar energy portal","AI-driven biotechnology portal","Digital health scheme","Youth skilling platform"],ans:1,exp:"SUJVIKA is an AI-driven biotechnology portal launched alongside the Union Budget 2026–27, supporting India's biotech sector with AI tools and research capabilities."},
+  {id:37,cat:"🇮🇳 India",q:"On Feb 24, Union Cabinet approved major projects in which sectors?",opts:["Education & healthcare","Infrastructure, metro, airport & rail","Defence and space","Agriculture and fisheries"],ans:1,exp:"The Union Cabinet on February 24 approved several major infrastructure projects spanning metro systems, airport expansion, and railway development across multiple states."},
+  {id:38,cat:"🇮🇳 India",q:"Which ministry launched the Blockchain India Challenge?",opts:["Ministry of Finance","Ministry of Home Affairs","MeitY","Ministry of Commerce"],ans:2,exp:"MeitY (Ministry of Electronics and Information Technology) launched the Blockchain India Challenge with Rs. 8.80 Crore prize pool, implemented by C-DAC Hyderabad."},
+  {id:39,cat:"🇮🇳 India",q:"The Blockchain India Challenge total prize pool was?",opts:["Rs. 5 Crore","Rs. 8.80 Crore","Rs. 12 Crore","Rs. 20 Crore"],ans:1,exp:"The Blockchain India Challenge offered Rs. 8.80 Crore total prize pool, implemented by C-DAC Hyderabad, encouraging innovators to build blockchain solutions for India."},
+  {id:40,cat:"🇮🇳 India",q:"India's 18–34 age group ranked where globally in Sapien Labs MHQ Report?",opts:["25th","40th","60th","75th"],ans:2,exp:"India's young adults (18–34) ranked 60th out of 84 countries in the Sapien Labs Global Mind Health Report with an MHQ score of 33."},
+  {id:41,cat:"🇮🇳 India",q:"Patna Bird Sanctuary and Chhari-Dhand were added to which list in Feb 2026?",opts:["UNESCO World Heritage","Tiger Reserves","Ramsar Sites","Biosphere Reserves"],ans:2,exp:"Patna Bird Sanctuary and Chhari-Dhand were added to India's Ramsar Sites List in February 2026, recognizing them as internationally important wetlands."},
+  {id:42,cat:"🇮🇳 India",q:"Who was appointed Director (HR) of Airports Authority of India?",opts:["Sanjiv Kumar","Nivedita Dubey","Arvind Singh","Videh Kumar Jaipuriar"],ans:1,exp:"Nivedita Dubey was appointed as Director (Human Resources) of the Airports Authority of India (AAI) in February 2026."},
+  {id:43,cat:"🇮🇳 India",q:"India held a joint military exercise with which country in February 2026?",opts:["Kazakhstan","Kyrgyzstan","Tajikistan","Uzbekistan"],ans:1,exp:"India conducted the India–Kyrgyzstan Joint Military Exercise in February 2026 to enhance bilateral defence cooperation and military interoperability."},
+  {id:44,cat:"🇮🇳 India",q:"ESIC's Platinum Jubilee (75th year) celebrations were held at which venue?",opts:["Vigyan Bhawan","India Intl. Centre","Bharat Mandapam, New Delhi","Rashtrapati Bhavan"],ans:2,exp:"ESIC's 75th Foundation Year (Platinum Jubilee) celebrations were held at Bharat Mandapam, New Delhi on February 24, with the government issuing a Rs. 75 commemorative coin."},
+  {id:45,cat:"🇮🇳 India",q:"Which Indian Navy vessel was launched at L&T Shipyard, Kattupalli in Feb 2026?",opts:["INS Vikrant II","Cadet Training Ship 'Krishna'","INS Brahmaputra","INS Shakti"],ans:1,exp:"The Indian Navy launched its first indigenously designed Cadet Training Ship 'Krishna' at L&T's Kattupalli shipyard — accommodates 150 cadets, named after the Krishna River."},
+  {id:46,cat:"📅 Imp. Days",q:"Indian Coast Guard Day is celebrated on which date?",opts:["February 1","February 4","February 8","February 14"],ans:0,exp:"Indian Coast Guard Day is celebrated on February 1 annually, marking the Coast Guard's establishment in 1977. February 2026 was its 50th Golden Jubilee."},
+  {id:47,cat:"📅 Imp. Days",q:"World Wetlands Day is observed on which date?",opts:["February 1","February 2","February 4","February 7"],ans:1,exp:"World Wetlands Day is February 2, the anniversary of the Ramsar Convention's adoption on February 2, 1971 in Ramsar, Iran."},
+  {id:48,cat:"📅 Imp. Days",q:"World Cancer Day falls on which date?",opts:["Feb 2","Feb 4","Feb 7","Feb 10"],ans:1,exp:"World Cancer Day is observed on February 4 globally, organized by the Union for International Cancer Control (UICC) to raise cancer awareness."},
+  {id:49,cat:"📅 Imp. Days",q:"International Mother Language Day is observed on which date?",opts:["Feb 14","Feb 19","Feb 21","Feb 28"],ans:2,exp:"International Mother Language Day is February 21, proclaimed by UNESCO in 1999, commemorating the 1952 Language Movement martyrs in Bangladesh."},
+  {id:50,cat:"📅 Imp. Days",q:"Arunachal Pradesh & Mizoram Foundation Day falls on which date?",opts:["Feb 18","Feb 20","Feb 22","Feb 24"],ans:1,exp:"Both Arunachal Pradesh and Mizoram celebrate Statehood Day on February 20 — both achieved full statehood simultaneously on February 20, 1987."},
+  {id:51,cat:"📅 Imp. Days",q:"National Science Day in India is celebrated on which date?",opts:["Feb 21","Feb 25","Feb 28","March 1"],ans:2,exp:"National Science Day is February 28, commemorating Sir C.V. Raman's discovery of the Raman Effect in 1928, for which he won the 1930 Nobel Prize in Physics."},
+  {id:52,cat:"📅 Imp. Days",q:"World NGO Day is observed on which date?",opts:["Feb 25","Feb 27","Feb 28","March 1"],ans:1,exp:"World NGO Day is observed on February 27 since 2014, recognizing the vital role of Non-Governmental Organizations in social, environmental, and humanitarian issues."},
+  {id:53,cat:"📅 Imp. Days",q:"Rare Disease Day is observed on which date?",opts:["Feb 22","Feb 25","Feb 28","March 1"],ans:2,exp:"Rare Disease Day is observed on the last day of February (Feb 28/29) each year to raise global awareness about rare diseases and advocate for better patient support."},
+  {id:54,cat:"📅 Imp. Days",q:"World Day of Social Justice falls on which date?",opts:["Feb 15","Feb 18","Feb 20","Feb 25"],ans:2,exp:"World Day of Social Justice is observed on February 20, proclaimed by the UN in 2007 to promote efforts against poverty, exclusion, and gender inequality."},
+  {id:55,cat:"📅 Imp. Days",q:"The Raman Effect was discovered in which year?",opts:["1922","1925","1928","1930"],ans:2,exp:"Sir C.V. Raman discovered the Raman Effect on February 28, 1928 — the phenomenon of inelastic scattering of light — earning him the 1930 Nobel Prize in Physics."},
+  {id:56,cat:"🏛️ Odisha",q:"Who presented the Odisha Budget 2026–27?",opts:["Deputy CM Pravati Parida","Finance Min. B.B. Jena","CM Mohan Charan Majhi","Speaker Surama Padhy"],ans:2,exp:"Chief Minister Mohan Charan Majhi himself presented the Odisha Budget 2026–27, targeting a nominal GSDP growth of 12% to reach approximately ₹11.07 lakh crore."},
+  {id:57,cat:"🏛️ Odisha",q:"What is the total size of Odisha's Budget 2026–27?",opts:["₹2.10 lakh crore","₹2.60 lakh crore","₹3.10 lakh crore","₹3.80 lakh crore"],ans:2,exp:"Odisha's Budget 2026–27 totalled ₹3.10 lakh crore, focusing on welfare programmes, infrastructure development, and balanced socio-economic growth."},
+  {id:58,cat:"🏛️ Odisha",q:"What nominal GSDP growth rate did Odisha's Budget 2026–27 target?",opts:["8%","10%","12%","15%"],ans:2,exp:"The Odisha Budget 2026–27 set an ambitious nominal GSDP growth target of 12%, aimed at growing the state's GSDP to approximately ₹11.07 lakh crore."},
+  {id:59,cat:"🏛️ Odisha",q:"What is the 'DALKHAI' initiative introduced in Odisha Budget 2026–27?",opts:["Women's micro-credit scheme","Initiative to eliminate bonded labour via livelihood support","Tribal education programme","Coastal resilience project"],ans:1,exp:"'DALKHAI' is an Odisha Budget 2026–27 initiative designed to eliminate bonded labour by providing affected individuals with livelihood support and infrastructure assistance."},
+  {id:60,cat:"🏛️ Odisha",q:"'Mukhyamantri Kanya Sumangal Yojana' offers up to how much financial support at graduation?",opts:["₹50,000","₹75,000","₹1,01,001","₹2,00,000"],ans:2,exp:"Mukhyamantri Kanya Sumangal Yojana offers ₹20,000 at birth and up to ₹1,01,001 upon graduation — promoting girls' education and reducing school dropout rates."},
+  {id:61,cat:"🏛️ Odisha",q:"How many additional beneficiaries to be covered under Madhubabu Pension Yojana?",opts:["2 lakh","4 lakh","Over 6 lakh","10 lakh"],ans:2,exp:"Over six lakh previously excluded senior citizens will now be covered under the Madhubabu Pension Yojana, ensuring social security for vulnerable elderly in Odisha."},
+  {id:62,cat:"🏛️ Odisha",q:"How much was allocated to agriculture & allied sectors in Odisha Budget 2026–27?",opts:["₹20,000 crore","₹30,000 crore","₹42,492 crore","₹55,000 crore"],ans:2,exp:"Agriculture received ₹42,492 crore in Odisha Budget 2026–27, including paddy procurement under the Samruddha Krushak Yojana and a revolving fund for timely farmer payments."},
+  {id:63,cat:"🏛️ Odisha",q:"Who tabled the Odisha Economic Survey 2025–26?",opts:["Finance Minister","Deputy CM","CM Mohan Charan Majhi","Governor"],ans:2,exp:"Chief Minister Mohan Charan Majhi tabled the Odisha Economic Survey 2025–26 on February 19, 2026, showing Odisha's economy outperforming national averages."},
+  {id:64,cat:"🏛️ Odisha",q:"Odisha's projected real GSDP growth for 2025–26 was?",opts:["6.5%","7.9%","8.5%","9.2%"],ans:1,exp:"Odisha's real GSDP growth was projected at 7.9% for 2025–26, surpassing the national average of 7.4% — a sign of Odisha outperforming the country overall."},
+  {id:65,cat:"🏛️ Odisha",q:"Odisha's GSDP at current prices in 2025–26 is estimated at approximately?",opts:["₹7.5 lakh crore","₹8.5 lakh crore","₹9.9 lakh crore","₹11 lakh crore"],ans:2,exp:"Odisha's GSDP was estimated at approximately ₹9.9 lakh crore in 2025–26 — a 9.5% increase over the previous year, approaching the ₹10 lakh crore milestone."},
+  {id:66,cat:"🏛️ Odisha",q:"Odisha approved how many investment projects to generate 3.35 lakh jobs?",opts:["100 projects","180 projects","244 projects","300 projects"],ans:2,exp:"Odisha approved 244 investment projects worth ₹5.66 lakh crore with potential for 3.35 lakh jobs. 80 projects were implemented creating 1.4 lakh direct jobs."},
+  {id:67,cat:"🏛️ Odisha",q:"Odisha's aviation network now connects the state to how many cities?",opts:["15 cities","22 cities","30 cities","40 cities"],ans:2,exp:"Odisha's aviation links now connect to 30 cities. The B-MAAN programme with over ₹4,000 crore planned investment will further enhance aviation infrastructure."},
+  {id:68,cat:"🏛️ Odisha",q:"How many 'Lakhpati Didis' have been created in Odisha?",opts:["5 lakh","10 lakh","16.42 lakh","25 lakh"],ans:2,exp:"Odisha created 16.42 lakh 'Lakhpati Didis' — women self-help entities earning over ₹1 lakh annually — through SUBHADRA and other livelihood programmes."},
+  {id:69,cat:"🏛️ Odisha",q:"Odisha launched the Black Swan Summit for which sector?",opts:["Manufacturing","AI-led fintech and digital finance","Renewable energy","Tourism"],ans:1,exp:"Odisha and the Global Finance and Technology Network launched the Black Swan Summit to position the state as a global hub for AI-led fintech, insurtech, and digital finance."},
+  {id:70,cat:"🏛️ Odisha",q:"Odisha's economy target by 2036 through the BharatNetra initiative is?",opts:["$200 billion","$350 billion","$500 billion","$750 billion"],ans:2,exp:"Odisha targets scaling its economy to $500 billion by 2036 through the BharatNetra initiative, with the Black Swan Summit as a key platform for fintech and digital economy growth."},
+  {id:71,cat:"🏛️ Odisha",q:"BMC launched its first government-supported creche at which location?",opts:["Unit-9, Bhubaneswar","Saheed Nagar, Bhubaneswar","Cuttack Chowk","Patia, Bhubaneswar"],ans:1,exp:"Bhubaneswar Municipal Corporation (BMC) launched its first government-supported creche at Saheed Nagar, for children aged 6 months to 6 years at ₹500/month for working parents."},
+  {id:72,cat:"🏛️ Odisha",q:"Odisha set a deadline for ward delimitation in new ULBs as?",opts:["December 2025","January 2026","March 31, 2026","June 2026"],ans:2,exp:"Odisha's Housing & Urban Development Department set March 31, 2026 as deadline for ward delimitation in 28 new NACs and 7 municipalities across 18 districts."},
+  {id:73,cat:"🏛️ Odisha",q:"What ban did Odisha's Health Department impose in February 2026?",opts:["Ban on alcohol","Ban on gutkha, pan masala & tobacco products","Ban on plastic bags","Ban on firecrackers"],ans:1,exp:"Odisha's State Health Department imposed a full ban on manufacturing, storage, distribution and sale of gutkha, pan masala, and all tobacco products — following a Supreme Court directive."},
+  {id:74,cat:"🏛️ Odisha",q:"Odisha's female labour force participation rate in 2024 was?",opts:["32%","40.5%","48.7%","55%"],ans:2,exp:"Odisha's female labour force participation surged to 48.7% in 2024 — a significant increase indicating stronger gender inclusion in productive economic activities."},
+  {id:75,cat:"🏛️ Odisha",q:"Odisha's debt-to-GSDP ratio in 2025–26 stands at approximately?",opts:["8%","13.6%","18%","22%"],ans:1,exp:"Odisha's debt-to-GSDP ratio stands at a healthy 13.6% — well within FRBM limits and significantly lower than many other Indian states, reflecting prudent fiscal management."},
+  {id:76,cat:"🇮🇳 India",q:"What does ESIC stand for?",opts:["Employee Salary Insurance Corp.","Employees' State Insurance Corporation","Enterprise Social Insurance Council","Employee Security & Insurance Commission"],ans:1,exp:"ESIC = Employees' State Insurance Corporation, a statutory body under Ministry of Labour providing social security and health insurance to Indian workers and their families."},
+  {id:77,cat:"🏛️ Odisha",q:"Odisha's per capita income grew by what percentage in 2025–26?",opts:["5.5%","7.8%","9.2%","11.5%"],ans:2,exp:"Odisha's per capita income (PCI) grew by 9.2% to ₹1,86,761 in 2025–26, significantly narrowing the gap between Odisha's PCI and India's national average PCI."},
+  {id:78,cat:"🌿 Environment",q:"The Ramsar Convention was established in which year?",opts:["1960","1971","1982","1992"],ans:1,exp:"The Ramsar Convention was established on February 2, 1971 in Ramsar, Iran — an intergovernmental treaty providing a framework for conservation of wetlands globally."},
+  {id:79,cat:"🌍 International",q:"Which country conducted airstrikes inside Afghanistan in February 2026?",opts:["India","Iran","Pakistan","USA"],ans:2,exp:"Pakistan launched airstrikes inside Afghanistan targeting Taliban positions in February 2026, escalating long-standing tensions over cross-border terrorism."},
+  {id:80,cat:"🗳️ Elections",q:"Bangladesh's July Charter referendum aimed to do what?",opts:["Establish presidential system","Replace the current constitution","Join a new regional bloc","Restore military rule"],ans:1,exp:"The July Charter referendum passed with a mandate to replace Bangladesh's current constitution — reflecting the country's desire for fresh democratic foundations after the Hasina era."},
+  {id:81,cat:"🏛️ Odisha",q:"Odisha's overall labour force participation rate increased to what level in 2024?",opts:["55%","60%","64.5%","68%"],ans:2,exp:"Odisha's overall labour force participation improved from 58.1% in 2022 to 64.5% in 2024 — above the national average — reflecting strong job creation and economic activity."},
+  {id:82,cat:"🏛️ Odisha",q:"Odisha's BRAP 2024 (Business Reforms Action Plan) implementation rate was?",opts:["85%","92%","98%","100%"],ans:2,exp:"Odisha's Business Reforms Action Plan (BRAP) 2024 achieved a 98% implementation rate, reflecting the state's enabling regulatory environment and ease of doing business."},
+  {id:83,cat:"🌿 Environment",q:"Patna Bird Sanctuary is located in which Indian state?",opts:["Bihar","Uttar Pradesh","Odisha","West Bengal"],ans:1,exp:"Patna Bird Sanctuary is in Uttar Pradesh — an important habitat for migratory birds — and was added to India's Ramsar Sites list in February 2026."},
+  {id:84,cat:"🚀 Space",q:"The Artemis program ultimately aims to send astronauts where beyond the Moon?",opts:["Venus","Jupiter","Mars","Europa"],ans:2,exp:"The Artemis program's ultimate goal is to use the Moon as a stepping stone for eventually sending humans to Mars."},
+  {id:85,cat:"🇮🇳 India",q:"The Sapien Labs Global Mind Health Report covered how many countries?",opts:["60","72","84","100"],ans:2,exp:"The Sapien Labs Global Mind Health Report assessed mental health across 84 countries, providing a comprehensive global ranking of mental well-being across age groups."},
+  {id:86,cat:"🏛️ Odisha",q:"Odisha's services sector contributed what % of GSVA?",opts:["28%","33%","39.1%","45%"],ans:2,exp:"The services sector contributed approximately 39.1% of Odisha's GSVA (Gross State Value Added) and was projected to grow at 9.3%, with financial services expanding at 11.9%."},
+  {id:87,cat:"🏛️ Odisha",q:"Odisha's rail network expanded to over how many kilometres?",opts:["2,000 km","2,800 km","3,243 km","4,000 km"],ans:2,exp:"Odisha's rail network expanded to over 3,243 km as per the Economic Survey 2025–26, enhancing freight and passenger mobility across the mineral-rich state."},
+  {id:88,cat:"🏛️ Odisha",q:"Odisha's public health spending since 2019–20 has done what?",opts:["Doubled","Tripled","Remained stable","Declined"],ans:1,exp:"Odisha's public health spending tripled since 2019–20, reaching nearly ₹19,700 crore, improving healthcare access particularly in rural and tribal areas."},
+  {id:89,cat:"🏛️ Odisha",q:"Odisha's capital outlay is highest among major Indian states at what % of GSDP?",opts:["4.2%","5.1%","6.6%","7.8%"],ans:2,exp:"Odisha's capital outlay rose to approximately 6.6% of GSDP — the highest among major Indian states — reflecting the government's strong emphasis on infrastructure investment."},
+  {id:90,cat:"📅 Imp. Days",q:"Which convention is associated with World Wetlands Day on February 2?",opts:["CBD","Kyoto Protocol","Ramsar Convention","Paris Agreement"],ans:2,exp:"World Wetlands Day (February 2) marks the anniversary of the Ramsar Convention, adopted on February 2, 1971 in Ramsar, Iran — the international treaty on wetland conservation."},
+  {id:91,cat:"🏛️ Odisha",q:"Which Odisha scheme ensures paddy procurement for farmers?",opts:["Mukhyamantri Kanyasri","Samruddha Krushak Yojana","DALKHAI Initiative","B-MAAN Programme"],ans:1,exp:"The Samruddha Krushak Yojana ensures paddy procurement for Odisha farmers. Budget 2026–27 also created a revolving fund under this scheme for timely farmer payments."},
+  {id:92,cat:"🏛️ Odisha",q:"B-MAAN stands for?",opts:["Building & Management of Aviation Assets and Network","Better Mobility for Air & Aviation Needs","Bureau of Modern Air & Aerodrome Network","Building Modern Airports Across National Hubs"],ans:0,exp:"B-MAAN stands for 'Building and Management of Aviation Assets and Network' — Odisha's aviation infrastructure programme with planned investments of over ₹4,000 crore."},
+  {id:93,cat:"🏛️ Odisha",q:"Odisha inked an MoU with which state for Early Childhood Care and Development?",opts:["Assam","Jharkhand","Meghalaya","Chhattisgarh"],ans:2,exp:"Odisha and Meghalaya signed an MoU for Early Childhood Care and Development (ECCD), collaborating on improving childcare services and early learning outcomes in both states."},
+  {id:94,cat:"🌍 International",q:"The Philippines signed defence pacts at Munich focused on which domain?",opts:["Nuclear deterrence","Maritime security","Cybersecurity","Missile defence"],ans:2,exp:"The Philippines signed military cooperation pacts at the Munich Security Conference focused on cybersecurity — reflecting growing digital warfare concerns in the Indo-Pacific region."},
+  {id:95,cat:"🏛️ Odisha",q:"Odisha's extreme poverty rate declined to what level under revised poverty lines?",opts:["2.1%","3.8%","5.3%","7.5%"],ans:2,exp:"Extreme poverty in Odisha declined to 5.3% under revised international poverty lines — reflecting the state's welfare programmes and consistent economic growth."},
+  {id:96,cat:"🏛️ Odisha",q:"Odisha's financial services sector is expected to expand at what rate?",opts:["7.5%","9.3%","11.9%","14%"],ans:2,exp:"Odisha's financial services sector is expected to expand at approximately 11.9%, supported by expanding banking, insurance, and fintech penetration across the state."},
+  {id:97,cat:"🏛️ Odisha",q:"Odisha's Vision 2036 & 2047 aligns with what national milestone?",opts:["India @ 100 (Amrit Kaal)","India's ASEAN presidency","Digital India 2030","Make in India 2.0"],ans:0,exp:"Odisha's Vision 2036 & 2047 aligns with India's Amrit Kaal and the centenary of independence (India @100 in 2047), emphasizing holistic long-term development goals."},
+  {id:98,cat:"📅 Imp. Days",q:"Which great physicist is commemorated on National Science Day (Feb 28)?",opts:["Homi J. Bhabha","J.C. Bose","C.V. Raman","S.N. Bose"],ans:2,exp:"National Science Day commemorates Sir C.V. Raman, who discovered the 'Raman Effect' on February 28, 1928 — the phenomenon of inelastic scattering of light."},
+  {id:99,cat:"🇮🇳 India",q:"The Cadet Training Ship 'Krishna' is the first of how many ships being built by L&T?",opts:["Two","Three","Four","Five"],ans:1,exp:"CTS Krishna is the first of three Cadet Training Ships being constructed by L&T for the Indian Navy under a Ministry of Defence contract, to train future naval officers."},
+  {id:100,cat:"🏛️ Odisha",q:"Odisha's Vision 2047 targets economy size aligned with what national goal?",opts:["$5 Trillion India","Viksit Bharat (Developed India)","Digital India 2047","Net-Zero India"],ans:1,exp:"Odisha's Vision 2047 aligns with Viksit Bharat (Developed India) — the national aspiration to become a fully developed nation by the 100th year of India's independence."}
+];
+
+const LABELS=['A','B','C','D'];
+const CATS=['All',...new Set(QS.map(q=>q.cat))];
+const TOTAL_SEC=3600;
+
+let answers={}, answered=0, score=0;
+let timeLeft=TOTAL_SEC, timerRunning=false, timerDone=false;
+let timerInt=null;
+let activeFilter='All';
+
+/* ── BUILD FILTER ── */
+function buildFilters(){
+  const d=document.getElementById('filters');
+  CATS.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='fbtn'+(c==='All'?' on':'');
+    b.textContent=c;
+    b.onclick=()=>applyFilter(c,b);
+    d.appendChild(b);
+  });
+}
+
+function applyFilter(cat,el){
+  activeFilter=cat;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  document.querySelectorAll('.card').forEach(c=>{
+    c.classList.toggle('hidden', cat!=='All' && c.dataset.cat!==cat);
+  });
+}
+
+/* ── BUILD QUIZ ── */
+function buildQuiz(){
+  const d=document.getElementById('quiz');
+  d.innerHTML='';
+  QS.forEach(q=>{
+    const card=document.createElement('div');
+    card.className='card'+(q.cat==='🏛️ Odisha'?' odisha':'');
+    card.id='c'+q.id;
+    card.dataset.cat=q.cat;
+
+    const optsHTML=q.opts.map((o,i)=>`
+      <button class="opt" id="o${q.id}_${i}" onclick="pick(${q.id},${i})">
+        <span class="opt-lbl">${LABELS[i]}</span>${o}
+      </button>`).join('');
+
+    card.innerHTML=`
+      <div class="qhead">
+        <div class="qnum">${q.id}</div>
+        <div style="flex:1">
+          <div class="qcat">${q.cat}</div>
+          <div class="qtxt">${q.q}</div>
+        </div>
+      </div>
+      <div class="opts">${optsHTML}</div>
+      <div class="expl" id="e${q.id}">
+        <div class="expl-lbl">💡 Answer Explanation</div>
+        <div class="expl-txt">${q.exp}</div>
+      </div>`;
+    d.appendChild(card);
+  });
+}
+
+/* ── PICK ANSWER ── */
+function pick(qid,chosen){
+  if(answers[qid]!==undefined || timerDone) return;
+  if(!timerRunning){ timerRunning=true; startTimer(); }
+
+  const q=QS.find(x=>x.id===qid);
+  answers[qid]=chosen;
+  answered++;
+  if(chosen===q.ans) score++;
+
+  for(let i=0;i<4;i++){
+    const b=document.getElementById('o'+qid+'_'+i);
+    b.disabled=true;
+    if(i===q.ans) b.classList.add('correct');
+    else if(i===chosen) b.classList.add('wrong');
+    else b.classList.add('dim');
+  }
+  document.getElementById('e'+qid).classList.add('show');
+  document.getElementById('c'+qid).classList.add('done');
+  updateBar();
+  if(answered===QS.length){ clearInterval(timerInt); showResult(false); }
+}
+
+/* ── TIMER ── */
+function startTimer(){
+  timerInt=setInterval(()=>{
+    timeLeft--;
+    renderTimer();
+    if(timeLeft<=0){ clearInterval(timerInt); timerDone=true; showTimeUp(); }
+  },1000);
+}
+
+function renderTimer(){
+  const m=String(Math.floor(timeLeft/60)).padStart(2,'0');
+  const s=String(timeLeft%60).padStart(2,'0');
+  const el=document.getElementById('timer');
+  el.textContent=m+':'+s;
+  el.className='timer';
+  if(timeLeft<=300 && timeLeft>60) el.classList.add('warn');
+  else if(timeLeft<=60) el.classList.add('danger');
+}
+
+function showTimeUp(){
+  // disable all remaining
+  QS.forEach(q=>{
+    if(answers[q.id]===undefined){
+      for(let i=0;i<4;i++){
+        const b=document.getElementById('o'+q.id+'_'+i);
+        if(b){b.disabled=true;b.classList.add('dim');}
+      }
+    }
+  });
+  const pct=Math.round(score/100*100);
+  document.getElementById('ovScore').textContent=score+'/100';
+  document.getElementById('ovMsg').textContent=pct+'% — '+getMsg(pct);
+  document.getElementById('overlay').classList.add('show');
+}
+
+function updateBar(){
+  document.getElementById('progFill').style.width=(answered)+'%';
+  document.getElementById('progTxt').textContent=answered+' / 100';
+  document.getElementById('scoreChip').textContent='Score: '+score;
+}
+
+function getMsg(p){
+  if(p>=90) return '🏆 Outstanding! You aced this!';
+  if(p>=75) return '🔥 Impressive! Very well-informed!';
+  if(p>=60) return '👍 Good effort! Keep revising!';
+  if(p>=40) return '🙂 Decent start! Read more news.';
+  return '📖 Keep practising — you will get there!';
+}
+
+function showResult(timeout){
+  const pct=Math.round(score/100*100);
+  document.getElementById('resScore').textContent=score+'/100';
+  document.getElementById('resMsg').textContent=pct+'% — '+getMsg(pct)+(timeout?' ⏰ Time ran out!':'');
+  document.getElementById('rsC').textContent=score;
+  document.getElementById('rsW').textContent=answered-score;
+  document.getElementById('rsS').textContent=100-answered;
+  document.getElementById('result').classList.add('show');
+  setTimeout(()=>document.getElementById('result').scrollIntoView({behavior:'smooth'}),300);
+}
+
+function restart(){
+  clearInterval(timerInt);
+  answers={}; answered=0; score=0;
+  timeLeft=TOTAL_SEC; timerRunning=false; timerDone=false;
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('result').classList.remove('show');
+  renderTimer(); updateBar();
+  buildQuiz();
+  applyFilter('All', document.querySelector('.fbtn'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── SCROLL TOP ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('backTop').classList.toggle('vis', window.scrollY>400);
+});
+
+/* ── INIT ── */
+buildFilters();
+buildQuiz();
+renderTimer();
+updateBar();
+</script>
+</body>
+</html>
